@@ -13,36 +13,17 @@ input {
 	border: 0;
 	background-color: rgba(0,0,0,0.0);
 	padding: 10px 15px 10px 15px;
-	width: 30%;
 	margin-bottom: 5%;
 }
 
-.no {
-	float: left;
+.no, .type, .select_head {
+	width: 32%;
+	
 }
 
-.type {
-	float: left;
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.state {
-	float: right;
-}
-
-.btn_able {
-	width: 16%;
+.select {
+	width: 15%;
 	margin-left: 8%;
-	border-radius: 30px;
-	background-color: #2ECC71;
-}
-
-.btn_unable {
-	width: 16%;
-	margin-left: 8%;
-	border-radius: 30px;
-	background-color: #E74C3C;
 }
 
 .btn_start {
