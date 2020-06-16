@@ -15,7 +15,7 @@ h2 {
 
 .card {
     margin: 5% 20% 0% 20%;
-    width: 60%;
+    width: 50%;
     background-color: #EAEDED;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -58,10 +58,11 @@ input {
 
 .no {
 	width: 10%;
+	margin-left: 2%;
 }
 
 .place {
-	width: 78%;
+	width: 75%;
 }
 
 .select {
