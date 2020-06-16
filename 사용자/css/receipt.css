@@ -1,3 +1,7 @@
+.card {
+	margin: 5% 35% 0 35%;
+}
+
 td {
 	position: relative;
 	display: inline-block;

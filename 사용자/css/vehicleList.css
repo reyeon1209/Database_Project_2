@@ -1,14 +1,3 @@
-#table {
-	position: relative;
-	display: block;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-#head {
-    border-bottom: 2px solid #8E44AD;
-}
-
 input {
 	border: 0;
 	background-color: rgba(0,0,0,0.0);
@@ -16,9 +5,12 @@ input {
 	margin-bottom: 5%;
 }
 
+.card {
+	margin: 5% 35% 0 35%;
+}
+
 .no, .type, .select_head {
 	width: 32%;
-	
 }
 
 .select {

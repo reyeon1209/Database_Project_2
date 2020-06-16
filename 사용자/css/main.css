@@ -1,59 +1,13 @@
-*{
-	font-family: arial;
-}
-
-h2 {
-	position: relative;
-	display: block;
-	margin: 0 auto;
-	margin-top: 15px;
-	margin-bottom: 45px;
-	text-align: center;
-	color: #8E44AD;
-	clear: both;
-}
-
-.card {
-    margin: 5% 20% 0% 20%;
-    width: 50%;
-    background-color: #EAEDED;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-    padding: 30px 30px;
-}
-
-.user_icon {
-	position: relative;
-	display: block;
-	float: right;
-	width: 30px;
-	height: 30px;
-}
-
-#table {
-	position: relative;
-	display: block;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-#head {
-	border-bottom: 2px solid #8E44AD;
-}
-
 input {
 	border: 0;
 	background-color: rgba(0,0,0,0.0);
-	padding: 10px;
+	padding: 10px 15px 10px 15px;
 	margin-bottom: 5%;
-	text-align: center;
+}
+
+.card {
+	margin: 5% 20% 0% 20%;
+    width: 50%;
 }
 
 .no {

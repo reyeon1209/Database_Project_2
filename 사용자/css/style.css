@@ -17,13 +17,23 @@ a {
 	text-decoration: none;
 }
 
+#table {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#head {
+    border-bottom: 2px solid #8E44AD;
+}
+
 .btns {
 	text-align: center;
 	margin-bottom: 15px;
 }
 
 .card {
-	margin: 5% 35% 0 35%;
 	padding: 25px;
 	background-color: #EAEDED;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
