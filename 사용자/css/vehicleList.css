@@ -1,0 +1,59 @@
+#table {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+#head {
+    border-bottom: 2px solid #8E44AD;
+}
+
+input {
+	border: 0;
+	background-color: rgba(0,0,0,0.0);
+	padding: 10px 15px 10px 15px;
+	width: 30%;
+	margin-bottom: 5%;
+}
+
+.no {
+	float: left;
+}
+
+.type {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.state {
+	float: right;
+}
+
+.btn_able {
+	background-color: #2ECC71;
+}
+
+.btn_unable {
+	background-color: #E74C3C;
+}
+
+.btn_start {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 150px;
+	border: 0;
+	background-color: #3498DB;
+	color: white;
+	padding: 10px 25px 10px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn_start:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	background-color: #2874A6;
+}
