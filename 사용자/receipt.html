@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Receipt</title>
+        <link rel="icon" type="image/png" href="imgs/icon/bycicle.png">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/receipt.css">
+	</head>
+
+	<body>
+		<form>
+			<div class="card">
+				<div class="container">
+					<h2><b>Rent Receipt</b></h2>
+
+                    <table>
+                        <tr>
+                            <td>시작 시간</td>
+                            <td id="startTime"> 시작 시간 데이터</td>
+                        </tr>
+
+                        <tr>
+                            <td>종료 시간 </td>
+                            <td id="endTime"> 종료 시간 데이터</td>
+                        </tr>
+
+                        <tr>
+                            <td>시작 장소 </td>
+                            <td id="startPlace"> 시작 장소 데이터</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>종료 장소 </td>
+                            <td><input type="text" id="end_place" name="end_place" placeholder=" Enter The End Place"></td>
+                        </tr>
+
+                        <tr>
+                            <td>결제 금액 </td>
+                            <td id="price"> 결제 금액 데이터</td>
+                        </tr>
+                    </table>
+
+                    <a href="main.html"><input class="btn_okay" type="button" name="okay" value="확인"></a>
+				</div>
+			</div>
+		</form>
+    </body>
+</html>
