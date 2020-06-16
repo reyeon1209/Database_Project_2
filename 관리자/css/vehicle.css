@@ -40,9 +40,11 @@ input {
 }
 
 .btn_able {
+	border-radius: 30px;
 	background-color: #2ECC71;
 }
 
 .btn_unable {
+	border-radius: 30px;
 	background-color: #E74C3C;
 }

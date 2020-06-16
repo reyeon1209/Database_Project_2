@@ -1,3 +1,7 @@
+*{
+	font-family: arial;
+}
+
 h2 {
 	position: relative;
 	display: block;
@@ -64,17 +68,17 @@ input {
 
 .s_time {
     float: left;
-    width: 27%;
+    width: 28%;
     margin-right: 3%;
 }
 
 .e_time {
     float: left;
-    width: 27%;
+    width: 28%;
 	margin-right: 3%;
 }
 
 .price {
-    float: left;
+    float: right;
     width: 15%;
 }

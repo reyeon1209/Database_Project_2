@@ -31,10 +31,16 @@ input {
 }
 
 .btn_able {
+	width: 16%;
+	margin-left: 8%;
+	border-radius: 30px;
 	background-color: #2ECC71;
 }
 
 .btn_unable {
+	width: 16%;
+	margin-left: 8%;
+	border-radius: 30px;
 	background-color: #E74C3C;
 }
 
