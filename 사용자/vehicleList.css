@@ -2,30 +2,49 @@
 	position: relative;
 	display: block;
 	margin: 0 auto;
-	overflow: hidden;
 }
 
 #head {
-	border-bottom: 2px solid #8E44AD;
+    border-bottom: 2px solid #8E44AD;
 }
 
 input {
 	border: 0;
 	background-color: rgba(0,0,0,0.0);
-	padding: 10px;
+	padding: 10px 15px 10px 15px;
+	width: 30%;
 	margin-bottom: 5%;
-	text-align: center;
 }
 
 .no {
-	width: 10%;
+	float: left;
 }
 
-.place {
-	width: 88%;
+.type {
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
-.btn_next {
+.state {
+	float: right;
+}
+
+.btn_able {
+	width: 16%;
+	margin-left: 8%;
+	border-radius: 30px;
+	background-color: #2ECC71;
+}
+
+.btn_unable {
+	width: 16%;
+	margin-left: 8%;
+	border-radius: 30px;
+	background-color: #E74C3C;
+}
+
+.btn_start {
 	position: relative;
 	display: block;
 	margin: 0 auto;
@@ -38,7 +57,7 @@ input {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.btn_next:hover {
+.btn_start:hover {
 	font-size: 15px;
 	font-weight: bold;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);

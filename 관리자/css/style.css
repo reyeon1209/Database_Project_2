@@ -39,3 +39,21 @@ a {
 	width: 30px;
 	height: 30px;
 }
+
+#table {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#head {
+    border-bottom: 2px solid #8E44AD;
+}
+
+input {
+	border: 0;
+	background-color: rgba(0,0,0,0.0);
+	padding: 10px 15px 10px 15px;
+	margin-bottom: 5%;
+}
