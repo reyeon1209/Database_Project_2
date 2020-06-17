@@ -5,8 +5,7 @@
 
 .no {
     float: left;
-    width: 5%;
-    margin-left: 1%;
+    width: 7%;
     text-align: center;
 }
 
@@ -19,7 +18,7 @@
 
 .place {
     float: left;
-    width: 44%;
+    width: 42%;
 	margin-right: 5%;
 }
 
@@ -30,6 +29,12 @@
 
 .state, .select_head {
     width: 10%;
+}
+
+.select {
+	width: 5%;
+	margin-top: 1%;
+	margin-left: 1%;
 }
 
 .btn_able {
@@ -48,7 +53,7 @@
 	width: 10%;
 }
 
-.btn_signin, .btn_signup {
+.btn_modify, .btn_delete, .btn_add {
 	position: relative;
 	display: inline-block;
 	margin: 0 auto;
@@ -60,24 +65,32 @@
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.btn_signin:hover, .btn_signup:hover {
+.btn_modify:hover, .btn_delete:hover, .btn_add:hover {
 	font-size: 15px;
 	font-weight: bold;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
 
-.btn_signin {
+.btn_modify {
 	background-color: #2ECC71;
 }
 
-.btn_signin:hover {
+.btn_modify:hover {
 	background-color: #239B56;
 }
 
-.btn_signup {
+.btn_delete {
 	background-color: #E74C3C;
 }
 
-.btn_signup:hover {
+.btn_delete:hover {
 	background-color: #B03A2E;
+}
+
+.btn_add {
+	background-color: #3498DB;
+}
+
+.btn_add:hover {
+	background-color: #2874A6;
 }
