@@ -1,0 +1,41 @@
+select {
+    position: relative;
+	display: block;
+    margin: 0 auto;
+	margin-bottom: 40px;
+	padding: 5px;
+    width: 300px;
+    padding: .8em .5em;
+    font-family: inherit;
+    background: url("../imgs/icon/down_arrow.png") no-repeat 95% 50%;
+    border: 0;
+    border-bottom: 2px solid #8E44AD;;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.card {
+	margin: 5% 35% 0 35%;
+}
+
+.btn_save {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 150px;
+	border: 0;
+	background-color: #3498DB;
+	color: white;
+	padding: 10px 25px 10px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn_save:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	background-color: #2874A6;
+}

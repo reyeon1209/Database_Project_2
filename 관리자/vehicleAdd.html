@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Add Vehicle</title>
+		<link rel="icon" type="image/png" href="imgs/icon/settings.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/vehicleAdd.css">
+	</head>
+
+	<body>
+		<form>
+			<div class="card">
+				<div class="container">
+                    <a href="main.html"><img class="back_icon" src="imgs/icon/arrow_back.png" alt="Back"></a>
+                    <h2><b>Add Vehicle</b></h2>
+
+					<input class="textbox" type="text" name="vid" placeholder="Enter The Vehicle ID" size="35">
+                    <select id="type">
+                        <option value="" selected disabled hidden>기기 종류</option>
+                        <option>따릉이</option>
+                        <option>씽씽이</option>
+                    </select>
+                    <select id="state">
+                        <option value="" selected disabled hidden>기기 상태</option>
+                        <option>가능</option>
+                        <option>고장</option>
+                    </select>
+                    <input class="textbox" type="text" name="place" placeholder="Enter The Vehicle Place" size="35">
+
+					<a href="main.html"><input class="btn_save" type="button" name="save" value="Save"></a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

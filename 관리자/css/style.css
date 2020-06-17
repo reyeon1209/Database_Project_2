@@ -55,6 +55,18 @@ input {
 	padding: 2px 16px;
 }
 
+.textbox {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding: 5px;
+	border: 0;
+	background-color: #EAEDED;
+	border-bottom: 2px solid #8E44AD;
+	font-size: 15px;
+}
+
 .back_icon {
 	position: relative;
 	display: block;
