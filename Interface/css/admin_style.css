@@ -1,0 +1,137 @@
+*{
+	font-family: arial;
+}
+
+h2 {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+	margin-bottom: 45px;
+	text-align: center;
+	color: #8E44AD;
+	clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+	border: 0;
+	background-color: rgba(0,0,0,0.0);
+	padding: 10px 15px 10px 15px;
+	margin-bottom: 5%;
+}
+
+#table {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#head {
+    border-bottom: 2px solid #8E44AD;
+}
+
+.btns {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.card {
+	padding: 25px;
+    background-color: #EAEDED;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+
+.textbox {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding: 5px;
+	border: 0;
+	background-color: #EAEDED;
+	border-bottom: 2px solid #8E44AD;
+	font-size: 15px;
+}
+
+.btn_modify, .btn_delete, .btn_add {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 150px;
+	border:0;
+	color: white;
+	padding: 10px 25px 10px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn_modify:hover, .btn_delete:hover, .btn_add:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+.btn_modify {
+	background-color: #2ECC71;
+}
+
+.btn_modify:hover {
+	background-color: #239B56;
+}
+
+.btn_delete {
+	background-color: #E74C3C;
+}
+
+.btn_delete:hover {
+	background-color: #B03A2E;
+}
+
+.btn_add {
+	background-color: #3498DB;
+}
+
+.btn_add:hover {
+	background-color: #2874A6;
+}
+
+.btn_save {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-top: 45px;
+	width: 150px;
+	border: 0;
+	background-color: #3498DB;
+	color: white;
+	padding: 10px 25px 10px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn_save:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	background-color: #2874A6;
+}
+
+.back_icon {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+}

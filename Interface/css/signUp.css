@@ -1,0 +1,30 @@
+input {
+	border: 0;
+	background-color: rgba(0,0,0,0.0);
+	padding: 10px 15px 10px 15px;
+	margin-bottom: 5%;
+}
+
+.card {
+	margin: 5% 35% 0 35%;
+}
+
+.btn_next {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 150px;
+	border: 0;
+	background-color: #3498DB;
+	color: white;
+	padding: 10px 25px 10px 25px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.btn_next:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+	background-color: #2874A6;
+}
