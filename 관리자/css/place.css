@@ -4,10 +4,20 @@
 }
 
 .name {
-	width: 35%;
+	width: 30%;
 	margin-left: 2%;
 }
 
 .address {
-	width: 60%;
+	width: 55%;
+}
+
+.select_head {
+    width: 10%;
+}
+
+.select {
+	width: 10%;
+	margin-top: 1%;
+	margin-left: 1%;
 }
