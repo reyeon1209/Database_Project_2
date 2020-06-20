@@ -60,7 +60,7 @@
     width: 9%;
  }
  
- .btn_modify, .btn_delete, .btn_add {
+ .btn_modify, .btn_delete, .btn_add, .btn_history {
     position: relative;
     display: inline-block;
     margin: 0 auto;
@@ -72,7 +72,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
  }
  
- .btn_modify:hover, .btn_delete:hover, .btn_add:hover {
+ .btn_modify:hover, .btn_delete:hover, .btn_add:hover, .btn_history:hover {
     font-size: 15px;
     font-weight: bold;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
@@ -100,4 +100,12 @@
  
  .btn_add:hover {
     background-color: #2874A6;
+ }
+
+ .btn_history {
+    background-color: #8E44AD;
+ }
+ 
+ .btn_history:hover {
+    background-color: #793A94;
  }
