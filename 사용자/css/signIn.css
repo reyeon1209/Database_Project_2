@@ -17,7 +17,7 @@ input {
 	height: 200px;
 }
 
-.btn_signin, .btn_signup {
+.btn_signin {
 	position: relative;
 	display: inline-block;
 	margin: 0 auto;
@@ -29,24 +29,13 @@ input {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.btn_signin:hover, .btn_signup:hover {
-	font-size: 15px;
-	font-weight: bold;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
-}
-
 .btn_signin {
 	background-color: #2ECC71;
 }
 
 .btn_signin:hover {
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 	background-color: #239B56;
-}
-
-.btn_signup {
-	background-color: #E74C3C;
-}
-
-.btn_signup:hover {
-	background-color: #B03A2E;
 }
