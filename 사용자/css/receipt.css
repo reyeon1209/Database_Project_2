@@ -21,6 +21,10 @@ td {
 	font-size: 15px;
 }
 
+.input {
+	margin-top: -1%;
+}
+
 .btn_okay {
 	position: relative;
 	display: block;
