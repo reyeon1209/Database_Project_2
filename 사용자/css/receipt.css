@@ -11,6 +11,11 @@ td {
 	background-color: #EAEDED;
 	border-bottom: 2px solid #8E44AD;
 	font-size: 15px;
+	
+}
+
+#startTime, #endTime, #price {
+	margin-top: 1%;
 }
 
 #end_place {
@@ -19,10 +24,6 @@ td {
 	border: 0;
 	background-color: #EAEDED;
 	font-size: 15px;
-}
-
-.input {
-	margin-top: -1%;
 }
 
 .btn_okay {
