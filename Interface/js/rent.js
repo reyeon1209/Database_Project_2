@@ -19,8 +19,7 @@ document.getElementById('end_rent').addEventListener('click', function() {
         parseInt(document.getElementById('post_hour').innerText) * 60 * 60 +
         parseInt(document.getElementById('post_min').innerText) * 60 +
         parseInt(document.getElementById('post_sec').innerText);
-
-})
+});
 
 function addZero(num) {
     return (num < 10 ? '0' + num : '' + num)
