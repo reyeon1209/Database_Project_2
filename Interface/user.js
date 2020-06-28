@@ -57,8 +57,8 @@ module.exports = {
                         <div class="container">
                             <h2><b>Sign In</b></h2>
 
-                            <input class="textbox" type="text" name="id" placeholder="Enter The User Id" size="35">
-                            <input class="textbox" type="password" name="pw" placeholder="Enter The Password" size="35">
+                            <input class="textbox" type="text" name="id" placeholder="Enter The User Id" size="35" required>
+                            <input class="textbox" type="password" name="pw" placeholder="Enter The Password" size="35" required>
                 
                             <div class="btns">
                                 <input class="btn_signin" type="submit" value="Sign In">
@@ -89,10 +89,10 @@ module.exports = {
                     <div class="container">
                         <h2><b>Sign Up</b></h2>
 
-                        <input class="textbox" type="text" name="id" placeholder="Enter Your ID" size="35">
-                        <input class="textbox" type="text" name="name" placeholder="Enter Your Full Name" size="35">
-                        <input class="textbox" type="email" name="email" placeholder="Enter Your Email" size="35">
-                        <input class="textbox" type="password" name="pw" placeholder="Enter Your Password" size="35">
+                        <input class="textbox" type="text" name="id" placeholder="Enter Your ID" size="35" required>
+                        <input class="textbox" type="text" name="name" placeholder="Enter Your Full Name" size="35" required>
+                        <input class="textbox" type="email" name="email" placeholder="Enter Your Email" size="35" required>
+                        <input class="textbox" type="password" name="pw" placeholder="Enter Your Password" size="35" required>
 
                         <input class="btn_next" type="submit" value="signUp">
                     </div>
@@ -186,10 +186,10 @@ module.exports = {
                             <a href="/myPage"><img class="back_icon" src="imgs/icon/arrow_back.png" alt="Back"></a>
                             <h2><b>User Information</b></h2>
         
-                            <input class="textbox" type="text" name="id" placeholder="Enter Your ID" value=${id} size="35">
-                            <input class="textbox" type="text" name="name" placeholder="Enter Your Full Name" value=${name} size="35">
-                            <input class="textbox" type="email" name="email" placeholder="Enter Your Email" value=${email} size="35">
-                            <input class="textbox" type="password" name="pw" placeholder="Enter Your Password" value=${password} size="35">
+                            <input class="textbox" type="text" name="id" placeholder="Enter Your ID" value=${id} size="35" required>
+                            <input class="textbox" type="text" name="name" placeholder="Enter Your Full Name" value=${name} size="35" required>
+                            <input class="textbox" type="email" name="email" placeholder="Enter Your Email" value=${email} size="35" required>
+                            <input class="textbox" type="password" name="pw" placeholder="Enter Your Password" value=${password} size="35" required>
         
                             <input class="btn_save" type="submit" value="수정"></a>
                         </div>
@@ -219,12 +219,12 @@ module.exports = {
                             <h2><b>Card Information</b></h2>
 
                             <div class="card_info">
-                                <input class="card_name" type="text" name="c_name" placeholder="Bank Name" value=${cname}><br>
-                                <input class="card_num" type="text" name="c_num" placeholder="Card Number" value=${cnum}><br>    
-                                <input class="card_year" type="text" name="c_month" placeholder="Year" value=${cvalid_m} size="3">
+                                <input class="card_name" type="text" name="c_name" placeholder="은행명입력" value=${cname} required><br>
+                                <input class="card_num" type="text" name="c_num" placeholder="카드번호 입력" value=${cnum} pattern="[0-9]{16}" required><br>    
+                                <input class="card_year" type="text" name="c_month" placeholder="월" value=${cvalid_m} size="3" pattern="[0-9]{2}" required>
                                 <p class="card_slash">/</p>
-                                <input class="card_month" type="text" name="c_year" placeholder="Month" value=${cvalid_y} size="3">
-                                <input class="card_cvc" type="password" name="c_cvc" placeholder="Enter Your Card CVC" value=${cvc} size="5"><br>
+                                <input class="card_month" type="text" name="c_year" placeholder="년" value=${cvalid_y} size="3" pattern="[0-9]{2}" required>
+                                <input class="card_cvc" type="password" name="c_cvc" placeholder="CVC 입력" value=${cvc} size="5" pattern="[0-9]{3}" required><br>
                             </div>
 
                             <input class="btn_save" type="submit" name="save" value="저장">

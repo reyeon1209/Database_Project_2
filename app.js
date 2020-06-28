@@ -17,7 +17,7 @@ var admin = require('./Interface/admin');
 var cookie = require('cookie');
 var sanitizeHtml = require('sanitize-html');
 
-//db와 연결 - amazon rds 인스턴스에 올려둔 db와 연결하였습니다.
+//db와 연결 - amazon rds에 올려둔 db와 연결하였습니다.
 var db = mysql.createConnection({
     host: 'ourdatabaseproject.cnfauaikje6z.us-east-2.rds.amazonaws.com',
     user: 'admin',
@@ -90,18 +90,16 @@ app.post('/regist', (req, res) => {
     var pw = sanitizeHtml(req.body.pw);
     var name = sanitizeHtml(req.body.name);
     var email = sanitizeHtml(req.body.email);
-    //각 값이 비어있는지 체크
-    if (id == '' || pw == '' || email == '' || name == '') {
-        res.send("<script>alert('양식을 모두 채워주세요!'); history.back();</script>");
-    }
     db.query('select * from User where u_id = ?', [id], function(err, result) {
         //이미 존재하는 아이디인지 체크 후 없다면 User 테이블에 추가
         if (result.length) {
             res.send("<script>alert('이미 존재하는 아이디입니다!'); location.replace('/signIn');</script>");
+        } else {
+            db.query(`insert into User(u_id, u_pw, u_name, u_email) 
+                values(?, ?, ?, ?)`, [id, pw, name, email], function(err, result) {
+                res.send("<script>alert('회원가입 성공!'); location.replace('/signIn');</script>");
+            });
         }
-        db.query("insert into User(u_id, u_pw, u_name, u_email) values(?, ?, ?, ?)", [id, pw, name, email], function(err, result) {
-            res.send("<script>alert('회원가입 성공!'); location.replace('/signIn');</script>");
-        });
     })
 });
 //회원탈퇴 실행시
@@ -308,25 +306,20 @@ app.post('/changeInfo', (req, res) => {
     var pw = sanitizeHtml(req.body.pw);
     var name = sanitizeHtml(req.body.name);
     var email = sanitizeHtml(req.body.email);
-    //비어있는 값이 있나 체크
-    if (id == '' || pw == '' || email == '' || name == '') {
-        res.send("<script>alert('양식을 모두 채워주세요!'); history.back();</script>");
-    } else {
-        //받아온 id 값에 대해서 이미 있는 값인지 체크
-        db.query('select * from User where u_id = ?', [id], function(err, result) {
-            if (result.length && id != u_id) {
-                res.send("<script>alert('이미 존재하는 아이디입니다!'); location.replace('/signIn');</script>");
-            } else {
-                //없는 값이라면 쿠키에 존재하는 아이디 값을 이용해서 유저의 정보 수정
-                db.query(`update User set u_id = ?, u_pw = ?, u_name = ?, u_email = ? 
+    //받아온 id 값에 대해서 이미 있는 값인지 체크
+    db.query('select * from User where u_id = ?', [id], function(err, result) {
+        if (result.length && id != u_id) {
+            res.send("<script>alert('이미 존재하는 아이디입니다!'); history.back();</script>");
+        } else {
+            //없는 값이라면 쿠키에 존재하는 아이디 값을 이용해서 유저의 정보 수정
+            db.query(`update User set u_id = ?, u_pw = ?, u_name = ?, u_email = ? 
             where u_id = ?`, [id, pw, name, email, u_id], function(err, result) {
-                    //수정된 유저의 아이디와 패스워드를 쿠키에 새롭게 저장
-                    res.cookie('id', id);
-                    res.send("<script>alert('정보수정 성공!'); location.replace('/myPage');</script>");
-                });
-            }
-        })
-    }
+                //수정된 유저의 아이디와 패스워드를 쿠키에 새롭게 저장
+                res.cookie('id', id);
+                res.send("<script>alert('정보수정 성공!'); location.replace('/myPage');</script>");
+            });
+        }
+    })
 });
 //카드관리
 app.get('/card', (req, res) => {
@@ -355,33 +348,26 @@ app.post('/updateCard', (req, res) => {
     var c_cvc = sanitizeHtml(req.body.c_cvc);
     //유효기간을 테이블에 넣기 위해서 간단한 수정
     var cvalid = parseInt(sanitizeHtml(req.body.c_month)) * 100 + parseInt(sanitizeHtml(req.body.c_year));
-    //비어있는 값이 있나 체크
-    if (c_num == '' || c_name == '' || c_cvc == '' || cvalid == '') {
-        res.send("<script>alert('양식을 모두 채워주세요!'); history.back();</script>");
-    } else if (c_num.length != 16 || c_cvc.length != 3) {
-        res.send("<script>alert('양식을 올바르게 채워주세요!'); history.back();</script>");
-    } else {
-        //카드 테이블에서 로그인된 유저의 카드가 있는지 탐색
-        db.query('select * from Card where User_u_id = ?', [u_id], function(err, result) {
-            if (!result.length) {
-                //카드가 없다면 입력된 정보들을 통해서 카드 테이블에 카드를 추가
-                db.query(`insert into Card(User_u_id, c_num, c_name, c_cvc, c_valid) 
+    //카드 테이블에서 로그인된 유저의 카드가 있는지 탐색
+    db.query('select * from Card where User_u_id = ?', [u_id], function(err, result) {
+        if (!result.length) {
+            //카드가 없다면 입력된 정보들을 통해서 카드 테이블에 카드를 추가
+            db.query(`insert into Card(User_u_id, c_num, c_name, c_cvc, c_valid) 
                 values(?, ?, ?, ?, ?)`, [u_id, c_num, c_name, c_cvc, cvalid], function(err2, result1) {
-                    if (cookie.parse(req.headers.cookie).p_id) {
-                        res.send("<script>alert('카드등록이 완료됐습니다!'); location.replace('/searchPlace');</script>")
-                    } else {
-                        res.send("<script>alert('카드등록이 완료됐습니다!'); history.back();</script>")
-                    }
-                })
-            } else {
-                //카드가 있다면 입력된 정보를을 통해서 카드 테이블을 수정
-                db.query(`update Card set c_num = ?, c_name = ?, c_cvc = ?, c_valid = ? 
+                if (cookie.parse(req.headers.cookie).p_id) {
+                    res.send("<script>alert('카드등록이 완료됐습니다!'); location.replace('/searchPlace');</script>")
+                } else {
+                    res.send("<script>alert('카드등록이 완료됐습니다!'); history.back();</script>")
+                }
+            })
+        } else {
+            //카드가 있다면 입력된 정보를을 통해서 카드 테이블을 수정
+            db.query(`update Card set c_num = ?, c_name = ?, c_cvc = ?, c_valid = ? 
                 where User_u_id = ?`, [c_num, c_name, c_cvc, cvalid, u_id], function(err2, result1) {
-                    res.send("<script>alert('카드수정이 완료됐습니다!'); history.back();</script>")
-                })
-            }
-        });
-    }
+                res.send("<script>alert('카드수정이 완료됐습니다!'); history.back();</script>")
+            })
+        }
+    });
 });
 //사용기록 조회
 app.get('/history', (req, res) => {
@@ -520,19 +506,24 @@ app.post('/admin_manage_vehicle', (req, res) => {
 app.post('/addVehicle', (req, res) => {
     //입력된 값을 필터링
     var v_id = sanitizeHtml(req.body.v_id);
-    //입력된 탈것의 아이디에 대해서 이미 존재하는 값인지 Vehicle에서 v_id로 검색
-    db.query('select * from Vehicle where v_id = ?', [v_id], function(err, vehicle) {
-        //이미 존재한다면 다시 되돌아가기
-        if (vehicle.length) {
-            res.send('<script>alert("이미 존재하는 식별번호 입니다!"); history.back();</script>');
-            //존재하지 않는다면 해당하는 탈것을 추가하기 - 해당장소는 존재하는 장소의 리스트에서 받아왔기에 체크 불필요
-        } else {
-            db.query(`insert into Vehicle(v_id, v_type, v_place)
+    //만약 장소나 탈것의 종류가 선택되지 않았을때는 다시 되돌아가기
+    if (!req.body.type || !req.body.place) {
+        res.send("<script>alert('양식을 제대로 채워주세요!'); history.back();</script>");
+    } else {
+        //입력된 탈것의 아이디에 대해서 이미 존재하는 값인지 Vehicle에서 v_id로 검색
+        db.query('select * from Vehicle where v_id = ?', [v_id], function(err, vehicle) {
+            //이미 존재한다면 다시 되돌아가기
+            if (vehicle.length) {
+                res.send('<script>alert("이미 존재하는 식별번호 입니다!"); history.back();</script>');
+                //존재하지 않는다면 해당하는 탈것을 추가하기 - 해당장소는 존재하는 장소의 리스트에서 받아왔기에 체크 불필요
+            } else {
+                db.query(`insert into Vehicle(v_id, v_type, v_place)
                     values(?, ?, ?)`, [v_id, req.body.type, req.body.place], function(err1, result) {
-                res.send("<script>alert('추가되었습니다!'); location.replace('/admin_vehicle');</script>");
-            });
-        }
-    });
+                    res.send("<script>alert('추가되었습니다!'); location.replace('/admin_vehicle');</script>");
+                });
+            }
+        });
+    }
 });
 //유저 관리 페이지
 app.get('/admin_user', (req, res) => {
@@ -607,9 +598,15 @@ app.post('/admin_manage_place', (req, res) => {
         //delete를 선택했을때는 check된 장소가 없을때 다시 돌아가도록 설정
         res.send('<script>alert("장소를 선택해주세요!"); history.back()</script>');
     } else {
-        //선택된 장소에 대해 삭제 수행
-        db.query('delete from Place where p_id = ?', [req.body.id], function(err, result) {
-            res.send('<script>alert("삭제되었습니다!"); location.replace("/admin_place");</script>');
+        //선택된 장소에 대해 삭제 수행하기 전에 장소에 기기가 남아있으면 다시 되돌아가기
+        db.query('select * from Vehicle where v_place = ?', [req.body.id], function(err, vehicles) {
+            if (vehicles.length) {
+                res.send('<script>alert("장소에 아직 기기가 남아있습니다!"); history.back()</script>');
+            } else {
+                db.query('delete from Place where p_id = ?', [req.body.id], function(err, result) {
+                    res.send('<script>alert("삭제되었습니다!"); location.replace("/admin_place");</script>');
+                });
+            }
         });
     }
 });

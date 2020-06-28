@@ -102,7 +102,7 @@ module.exports = {
                             <b> Add Vehicle</b>
                             </h2>
 
-                            <input class="textbox" type="text" name="v_id" placeholder="Enter The Vehicle ID" size="35">
+                            <input class="textbox" type="text" name="v_id" placeholder="Enter The Vehicle ID" size="35" pattern="[0-9]" required>
                             <select id="type" name="type">
                                 <option selected disabled hidden> 기기 종류</option>
                                 <option value="1"> 따릉이</option>
@@ -218,7 +218,6 @@ module.exports = {
             <link rel="stylesheet" type="text/css" href="css/admin_style.css">
             <link rel="stylesheet" type="text/css" href="css/admin_place.css">
         </head>
-        
         <body>
             <form action='/admin_manage_place' method='post'>
                 <div class="card">
@@ -276,8 +275,8 @@ module.exports = {
                             <b> Add Place</b>
                             </h 2>
         
-                            <input class="textbox" type="text" name="name" placeholder="Enter The Place Name" size="35">
-                            <input class="textbox" type="text" name="address" placeholder="Enter The Place Address" size="35">
+                            <input class="textbox" type="text" name="name" placeholder="Enter The Place Name" size="35" required>
+                            <input class="textbox" type="text" name="address" placeholder="Enter The Place Address" size="35" required>
         
                             <input class="btn_save" type="submit" value="추가">
                     </div>
